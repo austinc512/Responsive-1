@@ -1,0 +1,118 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+main {
+  background-color: aqua;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  text-align: center;
+  padding: 5%;
+}
+
+h1 {
+  color: white;
+  font-size: xx-large;
+}
+
+p {
+  color: white;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  margin: 0 auto;
+  height: 35px;
+  width: 200px;
+}
+
+.bar1 {
+  background-color: lightskyblue;
+}
+
+.bar1:hover {
+  background-color: blue;
+}
+
+.bar2 {
+  background-color: orange;
+}
+
+.bar3 {
+  background-color: aqua;
+}
+
+main {
+  grid-area: main;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "main"
+    "one"
+    "two"
+    "three";
+}
+
+/* laptop media query */
+
+@media (min-width: 576px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "main main"
+      "one two"
+      "three .";
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .one,
+  .two,
+  .three {
+    background-color: bisque;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "main main main"
+      "one two three";
+  }
+  .one,
+  .two,
+  .three {
+    background-color: blue;
+  }
+  h1 {
+    font-size: 60px;
+  }
+}
